@@ -131,6 +131,10 @@ li {
   background-color: var(--primary-background-color);
 }
 
+.ld-logo{
+  float: left;
+}
+
 .ld-search-btn {
   display: flex;
   align-items: center;
