@@ -258,18 +258,17 @@ li {
   padding-top: 2rem;
   background: var(--secondary-background-color);
   position: absolute;
-  top: 64px;
+  top:-100vh ;
   right: 10px;
   width: 95%;
-  height: 50vh;
-  /* border-top: 4px solid var(--accent-color); */
+  
   border-bottom: 4px solid var(--border-color);
   border-radius: 0.5rem;
   z-index: 2080;
   transition: all 0.4s ease-in-out;
   border-left: 1px solid var(--border-color);
 
-  transform: translate3d(120%, 0, 0);
+  
 }
 
 .ld-mb-menu {
@@ -372,7 +371,7 @@ li {
   gap: 1.5rem;
   height: 90vh;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   justify-content: flex-start;
 }
 

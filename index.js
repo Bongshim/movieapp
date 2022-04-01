@@ -32,13 +32,14 @@ menu_check.addEventListener("click", () => {
   
     if (menu_check.checked == true) {
         console.log("true");
-        slide_out_menu.style.transform = "translate3d(0, 0, 0)";
-        
+        // slide_out_menu.style.transform = "transform: none;";
+        // translate3d(0, 0, 0)
+        slide_out_menu.style.top = "64px";
     }
         else {
             console.log("false");
-            slide_out_menu.style.transform = "translate3d(120%, 0, 0)";
-            
+            slide_out_menu.style.top = "-100vh";
+            // translate3d(120%, 0, 0)
 
 }
 });
