@@ -131,7 +131,7 @@ li {
   background-color: var(--primary-background-color);
 }
 
-.ld-logo{
+.ld-logo a{
   float: left;
 }
 
@@ -373,10 +373,11 @@ li {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  height: 90vh;
+ 
   align-items: center;
   padding: 2rem 1rem;
   justify-content: flex-start;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .ld-hero-intro {
