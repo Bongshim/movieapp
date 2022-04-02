@@ -132,9 +132,20 @@ li {
   background-color: var(--primary-background-color);
 }
 
-.ld-logo a {
-  float: left;
+/* .ld-header{
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  justify-content: space-between;
+  
+  
+} */
+
+
+.ld-home-bg{
+  z-index: 20;
 }
+
 
 .ld-search-btn {
   display: flex;
@@ -434,7 +445,7 @@ li {
 }
 
 .ld-section-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
