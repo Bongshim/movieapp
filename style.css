@@ -106,6 +106,7 @@ li {
 .ld-search-btn,
 .ld-prev-btn,
 .ld-next-btn,
+.ld-filter-btn,
 .ld-close {
   color: var(--primary-text-color);
   cursor: pointer;
@@ -131,7 +132,7 @@ li {
   background-color: var(--primary-background-color);
 }
 
-.ld-logo a{
+.ld-logo a {
   float: left;
 }
 
@@ -262,21 +263,15 @@ li {
   padding-top: 2rem;
   background: var(--secondary-background-color);
   position: absolute;
-  top:-100vh ;
+  top: -100vh;
   right: 10px;
   width: 95%;
-  
+
   border-bottom: 4px solid var(--border-color);
   border-radius: 0.5rem;
   z-index: 2080;
   transition: all 0.4s ease-in-out;
   border-left: 1px solid var(--border-color);
-
-  
-}
-
-.ld-mb-menu {
-  /* display: none; */
 }
 
 .ld-slide-out-menu ul {
@@ -306,7 +301,8 @@ li {
 /* video item styling */
 
 .ld-video-item {
-  width: 250px;
+  /* width: 250px; */
+  /* width: 47%; */
   position: relative;
 }
 
@@ -373,7 +369,7 @@ li {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
- 
+
   align-items: center;
   padding: 2rem 1rem;
   justify-content: flex-start;
@@ -420,3 +416,63 @@ li {
   justify-content: flex-start;
 }
 /* end hero section */
+
+/* Section title */
+.ld-section-header {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+.ld-section-title,
+.ld-filter-section {
+  padding: 0 1rem;
+  color: var(--primary-text-color);
+}
+
+.ld-section-title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.ld-filter-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.ld-filter-section .ld-filter-title {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.ld-gallery {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ld-gallery {
+  padding: 1rem 1rem;
+}
+
+/* End Section title */
+
+
+
+
+/* Mobile Media queries */
+@media (max-width: 480px) {
+
+
+  .ld-video-item {
+    width: 47%;
+  }
+
+  .ld-gallery .ld-hero-videos {
+    flex-wrap: wrap;
+  }
+}
+/* End mobile media queries */
