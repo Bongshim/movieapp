@@ -6,7 +6,7 @@
   --primary-text-color: hsl(0, 0%, 100%);
   --border-color: #222028;
   --textarea-background-color: hsl(255, 11%, 14%);
-  --secondary-text-color: hsl(100,3%,63%);
+  --secondary-text-color: hsl(100, 3%, 63%);
   --secondary-background-color: hsl(255, 11%, 14%);
 }
 
@@ -101,7 +101,7 @@ li {
   list-style: none;
 }
 
-.ld-pd-top-btm{
+.ld-pd-top-btm {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -137,8 +137,6 @@ li {
   background-color: var(--primary-background-color);
 }
 
-
-
 .ld-search-btn {
   display: flex;
   align-items: center;
@@ -146,7 +144,7 @@ li {
   margin-right: 3rem;
 }
 
-.ld-icons {
+.ld-mb-icons {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -430,11 +428,11 @@ li {
   margin-bottom: 1rem;
 }
 
-.ld-em-heading{
+.ld-em-heading {
   font-weight: 600;
 }
 
-.ld-section-description{
+.ld-section-description {
   color: var(--primary-text-color);
   padding: 1rem;
 }
@@ -472,9 +470,6 @@ li {
 
 /* End Section title */
 
-
-
-
 /* Footer section */
 
 .ld-footer {
@@ -488,16 +483,14 @@ li {
 .ld-footer-links {
   display: flex;
   gap: 1rem;
- 
-  
 }
 
-.ld-footer-links{
+.ld-footer-links {
   padding: 1rem 0 2rem;
 }
 
-.ld-footer-links span{
-  font-size: .8rem;
+.ld-footer-links span {
+  font-size: 0.8rem;
   font-weight: 400;
 }
 
@@ -507,19 +500,14 @@ li {
   color: var(--secondary-text-color);
 }
 
-.ld-footer-links span{
-  
+.ld-footer-links span {
   color: var(--primary-text-color);
 }
 
 /* end Footer section */
 
-
-
 /* Mobile Media queries */
 @media (max-width: 480px) {
-
-
   .ld-video-item {
     width: 47%;
   }
@@ -527,5 +515,132 @@ li {
   .ld-gallery .ld-hero-videos {
     flex-wrap: wrap;
   }
+  .ld-ds-menu{
+    display: none;
+  }
 }
 /* End mobile media queries */
+
+/* Desktop search area */
+
+@media (min-width: 480px) {
+  /* .ld-header {
+    position: fixed;
+  }
+  .ld-hero-section{
+   
+    padding-top: 10rem;
+  } */
+
+  /* Video item  */
+  .ld-video-item {
+    width: 198px;
+  }
+  /* end Video item */
+
+  /* toggle mobile items */
+  .ld-mb-icons,
+  .ld-slide-out-menu {
+    display: none;
+  }
+  /* end toggle mobile items */
+
+  .ld-ds-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+  }
+
+
+  .ld-ds-menu ul {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .ld-ds-menu ul li {
+    color: var(--primary-text-color);
+  }
+
+  .ld-ds-menu2{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+  }
+
+  .ld-search-area {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .ld-search-dropbox {
+    border-radius: 0.5rem ;
+    border: none;
+    padding: 0.5rem 4rem 0.5rem 0.5rem;
+    width: 100%;
+    background-color: var(--textarea-background-color);
+    color: var(--secondary-text-color);
+    font-weight: 600;
+  }
+
+  .ld-search-dropbox:focus {
+    outline: 1px solid var(--accent-color);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .ld-ds-search {
+    color: var(--secondary-text-color);
+
+  }
+
+  .ld-ds-search-btn {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-background-color);
+    position: absolute;
+    right: 30px;
+  }
+
+  .ld-ds-lang-icon,
+  .ld-ds-lang-text {
+    color: var(--primary-text-color);
+  }
+
+  /* Hover effects over language */
+  .ld-ds-lang:hover .ld-ds-lang-icon {
+    color: var(--accent-color);
+    transition: all 0.4s ease-in-out;
+  }
+  .ld-ds-lang:hover .ld-ds-lang-text {
+    color: var(--accent-color);
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* language */
+  .ld-ds-lang {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+  /* end language styling */
+
+  /* button styling*/
+  .ld-ds-btn-sign-in{
+    all:unset;
+    border: 2px solid var(--accent-color);
+    border-radius: 0.5rem;
+    padding: .5rem 2rem;
+    color: var(--primary-text-color);
+    font-size:1rem;
+    font-weight: 400;
+
+  }
+
+  /* end button styling*/
+}
