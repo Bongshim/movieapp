@@ -25,13 +25,15 @@ const slide_out_menu = document.querySelector(".ld-slide-out-menu");
 
 menu_check.addEventListener("click", () => {
   if (menu_check.checked == true) {
-    console.log("true");
+    // console.log("true");
     // slide_out_menu.style.transform = "transform: none;";
     // translate3d(0, 0, 0)
     slide_out_menu.style.top = "64px";
+    slide_out_menu.style.transition = "transition: all 0.4s ease-in-out";
   } else {
-    console.log("false");
+    // console.log("false");
     slide_out_menu.style.top = "-100vh";
+    slide_out_menu.style.transition = "transition: all 0.4s ease-in-out";
     // translate3d(120%, 0, 0)
   }
 });
