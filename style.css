@@ -377,6 +377,9 @@ li {
   font-weight: 400;
   color: var(--primary-text-color);
   margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ld-video-item .ld-video-content .ld-video-title:hover {
