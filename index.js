@@ -11,13 +11,6 @@ const language_btn = document.querySelector(".ld-ds-lang-text");
 // Get language drop dropdown
 const language_dropdown = document.querySelector(".ld-lang-container");
 
-// get page language Section
-const page_lang_en = document.querySelector(".lang-en");
-const page_lang_pigin = document.querySelector(".lang-pigin");
-
-// select language value
-const language_en = document.querySelector(".lang-item-en");
-const language_pg = document.querySelector(".lang-item-pg");
 
 // drop down language list
 language_btn.addEventListener("click", () => {
@@ -34,18 +27,8 @@ language_btn.addEventListener("click", () => {
   }
 });
 
-// changing page language to english
-language_en.addEventListener("click", () => {
-  console.log(language_en.textContent);
 
-  language_en.classList.add("ld-lang-state");
-});
 
-// changing page language to pigin
-
-language_pg.addEventListener("click", () => {
-  console.log(language_pg.textContent);
-});
 
 // close search box
 close_search.addEventListener("click", () => {
