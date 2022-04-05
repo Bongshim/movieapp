@@ -19,7 +19,8 @@ const ANIMATION = BASE_URL + "/discover/movie?" + API_KEY + "&language=en-US&sor
 
 const NIGERIAN_MOVIES = BASE_URL + "/search/movie?" + API_KEY + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&query=nigeria";
 
-// console.log(ANIMATION)
+
+// console.log(TOP_RATED_MOVIES)
 
 
 // Getting popular movies
@@ -32,6 +33,7 @@ getTrendingTVShows(TRENDING_TV_SHOWS);
 getAnimationMovies(ANIMATION);
 
 getNigerianMovies(NIGERIAN_MOVIES);
+
 
 //getting popular movies
 function getPopularMovies(url) {
@@ -81,6 +83,8 @@ function getNigerianMovies(url) {
       showNigerianMovies(data.results);
     });
 }
+
+
 
 // getting the genres of movies
 
@@ -270,6 +274,8 @@ function showNigerianMovies(movies){
   });
 // }
 }
+
+
 
 // function movieSelected(title){
 //   sessionStorage.setItem('movieTitle',title);

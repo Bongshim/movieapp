@@ -108,6 +108,8 @@ li {
 
 /* end Body style */
 
+
+
 .ld-search-btn,
 .ld-prev-btn,
 .ld-next-btn,
@@ -312,6 +314,10 @@ li {
 }
 
 /* end slide out menu */
+
+.ld-lang-state{
+  
+}
 
 /* Header BG */
 .ld-hero-section {
@@ -522,7 +528,7 @@ li {
   color: var(--secondary-text-color);
 }
 
-.ld-footer-links span a{
+.ld-footer-links span a {
   color: var(--primary-text-color);
 }
 
@@ -830,11 +836,14 @@ input:focus {
 /* Mobile Media queries */
 @media (max-width: 480px) {
 
-  .ld-mb-btn-sign-in a{
+  .ld-lang-container{
+    display:none;
+  }
+
+  .ld-mb-btn-sign-in a {
     border: 2px solid var(--accent-color);
     border-radius: 0.5rem;
     padding: 0.5rem 2rem;
-    
   }
 
   .ld-gallery .ld-hero-videos {
@@ -951,41 +960,34 @@ input:focus {
 
   /* FAQ page end */
 
+  /* PRIVACY PAGE */
 
+  .pp-container {
+    width: 100%;
+    padding: 0 1rem;
+  }
 
-/* PRIVACY PAGE */
+  .pp-page-text {
+    width: 100%;
+    padding-top: 30px;
+  }
 
-.pp-container{
-  width: 100%;
-  padding: 0 1rem;
-}
+  .pp-page-bold {
+    width: 100%;
+    padding-top: 50px;
+    color: var(--accent-color);
+    /* line-height: 2rem; */
+    font-size: 1.5rem;
+    /* padding-left: 20%; */
+    /* margin: 0 auto; */
+  }
 
-
-.pp-page-text {
-  width: 100%;
-  padding-top: 30px;
-  
-}
-
-.pp-page-bold {
-  width: 100%;
-  padding-top: 50px;
-  color: var(--accent-color);
-  /* line-height: 2rem; */
-  font-size: 1.5rem;
-  /* padding-left: 20%; */
-  /* margin: 0 auto; */
-}
-
-.pp-page-title {
-  /* margin-right: 36%; */
-  /* padding-top: 50px; */
-  color: var(--accent-color);
-}
-/* END PRIVACY PAGE */
-
-
-
+  .pp-page-title {
+    /* margin-right: 36%; */
+    /* padding-top: 50px; */
+    color: var(--accent-color);
+  }
+  /* END PRIVACY PAGE */
 }
 /* End mobile media queries */
 
@@ -1087,6 +1089,10 @@ input:focus {
     color: var(--secondary-text-color);
   }
 
+  .ld-ds-search:hover {
+    color: var(--accent-color);
+  }
+
   .ld-ds-search-btn {
     all: unset;
     display: flex;
@@ -1095,8 +1101,13 @@ input:focus {
     background-color: var(--secondary-background-color);
     position: absolute;
     right: 30px;
+    height: 90%;
+    cursor: pointer;
   }
 
+  .ld-ds-lang{
+    cursor: pointer;
+  }
   .ld-ds-lang-icon,
   .ld-ds-lang-text {
     color: var(--primary-text-color);
@@ -1127,17 +1138,56 @@ input:focus {
     border: 2px solid var(--accent-color);
     border-radius: 0.5rem;
     padding: 0.5rem 2rem;
-    
   }
 
-  
-
-.ld-ds-btn-sign-in a{
-  color: var(--primary-text-color);
+  .ld-ds-btn-sign-in a {
+    color: var(--primary-text-color);
     font-size: 1rem;
     font-weight: 400;
-}
+  }
   /* end button styling*/
+
+  /* LANGUAGE */
+
+.ld-lang-container {
+  position: relative;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: none;
+}
+
+.lang-en {
+  display: block;
+}
+
+.lang-pigin {
+  display: none;
+}
+
+.ld-lang-selector {
+  position: absolute;
+  z-index: 3000;
+  border-radius: 6px;
+  background-color: var(--primary-background-color);
+  right: 150px;
+}
+
+.ld-lang-selector .lang-item {
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid var(--border-color);color: var(--primary-text-color);
+  font-weight: 400;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+
+.ld-lang-selector .lang-item:hover{
+  color: var(--accent-color);
+    transition: all 0.4s ease-in-out;
+}
+
+/* END LANGUAGE */
 
   /* end Desktop menu section */
 
@@ -1344,27 +1394,22 @@ input:focus {
 
   /* END FAQ PAGE */
 
-/* PRIVACY POLICY PAGE */
-.pp-container {
-  width: 1140px;
-  margin: 0 auto;
-  margin-bottom: 5rem;
+  /* PRIVACY POLICY PAGE */
+  .pp-container {
+    width: 1140px;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+  }
+  /* END PRIVACY POLICY PAGE */
 }
-/* END PRIVACY POLICY PAGE */
-
-}
-
 
 /* Privacy Policy page */
 
 /* global styles */
 
-
 .pp-section {
   padding: 2rem 0;
 }
-
-
 
 .pp-img {
   width: 100%;
@@ -1378,7 +1423,6 @@ input:focus {
   padding-top: 20px;
   /* padding-left: 20%; */
 }
-
 
 .pp-page-text {
   width: 100%;
@@ -1403,10 +1447,9 @@ input:focus {
   color: var(--accent-color);
 }
 
-.pp-page-text a{
+.pp-page-text a {
   color: var(--accent-color);
 }
-
 
 @media screen and (max-width: 442px) {
   .pp-page-img {

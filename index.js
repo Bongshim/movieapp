@@ -5,6 +5,48 @@ const search_dropdown = document.querySelector(".ld-search-dropdown");
 // Get search button
 const search_btn = document.querySelector(".ld-search-btn");
 
+// Get language button
+const language_btn = document.querySelector(".ld-ds-lang-text");
+
+// Get language drop dropdown
+const language_dropdown = document.querySelector(".ld-lang-container");
+
+// get page language Section
+const page_lang_en = document.querySelector(".lang-en");
+const page_lang_pigin = document.querySelector(".lang-pigin");
+
+// select language value
+const language_en = document.querySelector(".lang-item-en");
+const language_pg = document.querySelector(".lang-item-pg");
+
+// drop down language list
+language_btn.addEventListener("click", () => {
+  // console.log("clicked");
+
+  language_btn.classList.toggle("ld-lang-state");
+
+  if (language_btn.classList.contains("ld-lang-state")) {
+    language_dropdown.style.display = "block";
+    search_dropdown.style.transition = "all 0.5s ease-in-out";
+  } else {
+    language_dropdown.style.display = "none";
+    search_dropdown.style.transition = "all 0.5s ease-in-out";
+  }
+});
+
+// changing page language to english
+language_en.addEventListener("click", () => {
+  console.log(language_en.textContent);
+
+  language_en.classList.add("ld-lang-state");
+});
+
+// changing page language to pigin
+
+language_pg.addEventListener("click", () => {
+  console.log(language_pg.textContent);
+});
+
 // close search box
 close_search.addEventListener("click", () => {
   search_dropdown.style.top = "-100px";
@@ -38,10 +80,8 @@ menu_check.addEventListener("click", () => {
   }
 });
 
-
 $(document).ready(function () {
   //your code here
-
 
   $(".owl-carousel").owlCarousel({
     mouseDrag: false,
@@ -60,15 +100,13 @@ $(document).ready(function () {
       },
       768: {
         items: 3,
-        
       },
       992: {
         items: 4,
-        
       },
       1200: {
         items: 5,
-        
+
         slideBy: 5,
         smartSpeed: 400,
       },
@@ -81,5 +119,4 @@ $(document).ready(function () {
   $(".ld-prev").on("click", function () {
     $(".owl-carousel").trigger("prev.owl.carousel");
   });
-
 });
