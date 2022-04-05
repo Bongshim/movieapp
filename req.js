@@ -11,6 +11,8 @@ const UPCOMING_URL = BASE_URL + "/movie/upcoming?" + API_KEY;
 
 const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
+const SEARCH_SINGLEM_URL = BASE_URL + "/search/movie?" + API_KEY;
+
 // Getting popular movies
 getPopularMovies(POPULAR_MOVIES_URL);
 
@@ -29,29 +31,28 @@ function getPopularMovies(url) {
 // getting upcoming movies
 //getting the movies
 function getUpcomingMovies(url) {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-          console.table(data.results);
-        showUpcomingMovies(data.results);
-      });
-  }
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      // console.table(data.results);
+      showUpcomingMovies(data.results);
+    });
+}
 
-
-  // getting the genres of movies
-   
-
+// getting the genres of movies
 
 // show popular movies
 function showPopularMovies(movies) {
   movies.forEach((movie) => {
     // getting the movies
+    // console.table(movie)
     const movieTitle = movie.title;
     const movieRating = movie.vote_average;
     const movieGenreID = movie.genre_ids[0];
     const moviePoster = IMG_URL + movie.poster_path;
 
-  
+
+
     // embeding data in html page
     const movieGallery = document.querySelector(".ld-video-data-contain");
 
@@ -59,7 +60,7 @@ function showPopularMovies(movies) {
     movieBox.classList.add("ld-video-item");
 
     movieBox.innerHTML = `
-    <div class="ld-video-cover">
+    <a onclick="movieSelected('${movie.original_title}')"><div class="ld-video-cover">
         <img
         src="${moviePoster}"
         alt="Benched" />
@@ -69,7 +70,7 @@ function showPopularMovies(movies) {
     <div class="ld-video-content">
         <h3 class="ld-video-title">${movieTitle}</h3>
         <span class="ld-video-category"></span>
-    </div>
+    </div></a>
     `;
 
     movieGallery.appendChild(movieBox);
@@ -78,21 +79,22 @@ function showPopularMovies(movies) {
 
 // show upcoming movies
 function showUpcomingMovies(movies) {
-    movies.forEach((movie) => {
-      // getting the movies
-      const movieTitle = movie.title;
-      const movieRating = movie.vote_average;
-      const movieGenreID = movie.genre_ids[0];
-      const moviePoster = IMG_URL + movie.poster_path;
-  
-    
-      // embeding data in html page
-      const movieGallery = document.querySelector(".ld-video-data-contain-coming");
-  
-      const movieBox = document.createElement("div");
-      movieBox.classList.add("ld-video-item");
-  
-      movieBox.innerHTML = `
+  movies.forEach((movie) => {
+    // getting the movies
+    const movieTitle = movie.title;
+    const movieRating = movie.vote_average;
+    const movieGenreID = movie.genre_ids[0];
+    const moviePoster = IMG_URL + movie.poster_path;
+
+    // embeding data in html page
+    const movieGallery = document.querySelector(
+      ".ld-video-data-contain-coming"
+    );
+
+    const movieBox = document.createElement("div");
+    movieBox.classList.add("ld-video-item");
+
+    movieBox.innerHTML = `
       <div class="ld-video-cover">
           <img
           src="${moviePoster}"
@@ -105,7 +107,16 @@ function showUpcomingMovies(movies) {
           <span class="ld-video-category"></span>
       </div>
       `;
-  
-      movieGallery.appendChild(movieBox);
-    });
-  }
+
+    movieGallery.appendChild(movieBox);
+  });
+}
+
+
+function movieSelected(title){
+  sessionStorage.setItem('movieTitle',title);
+  window.location = '/src/movie.html';
+  return false;
+}
+
+

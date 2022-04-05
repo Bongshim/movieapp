@@ -10,7 +10,6 @@
   --secondary-background-color: hsl(255, 11%, 14%);
 }
 
-
 /* Box sizing rules */
 *,
 *::before,
@@ -301,7 +300,7 @@ li {
 
   font-size: 1.2rem;
   font-weight: 400;
-  border-bottom: 1px solid var(--primary-background-color);
+  /* border-bottom: 1px solid var(--primary-background-color); */
 }
 .ld-slide-out-menu ul li a {
   color: var(--primary-text-color);
@@ -527,23 +526,317 @@ li {
   color: var(--primary-text-color);
 }
 
-
-.faq_header{
+.faq_header {
   color: var(--primary-text-color);
   font-weight: 400;
 }
-.faq_nav-link{
+.faq_nav-link {
   color: var(--secondary-text-color);
 }
 
-.faq-home-link p{
+.faq-home-link p {
   color: var(--primary-text-color);
 }
 
 /* end Footer section */
 
+/* Sign in-up page */
+
+.sign:before {
+  content: "";
+  background: url(./assets/imgs/wall.jpg) no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.sign {
+  display: block;
+  position: relative;
+}
+
+.sign__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.sign__form {
+  background-color: var(--primary-background-color);
+  border: 1px solid var(--secondary-background-color);
+  border-radius: 6px;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.sign__logo {
+  display: block;
+  margin-bottom: 40px;
+}
+.sign__logo a {
+  max-width: 100%;
+  width: auto;
+}
+.sign__logo img {
+  width: 140px;
+}
+
+input,
+select {
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  transition: 0.4s;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* DEletre */
+
+.sign__input:focus {
+  border-color: var(--accent-color);
+}
+
+.sign__group {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Checked style */
+
+.con-checkbox a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+.con-checkbox {
+  color: var(--primary-text-color);
+  display: block;
+  position: relative;
+  left: 15px;
+
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* width: 100%;
+  text-align: left; */
+}
+
+.con-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: var(--secondary-background-color);
+  border: solid 0.5px var(--accent-color);
+  border-radius: 25%;
+  opacity: 0.85;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: var(--secondary-background-color);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: var(--primary-background-color);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 5px;
+  top: 3.7px;
+  width: 2px;
+  height: 5px;
+  border: solid var(--accent-color);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.sign__btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 46px;
+  width: 100%;
+  border-radius: 6px;
+  background-color: transparent;
+  font-size: 14px;
+  color: var(--primary-text-color);
+  text-transform: uppercase;
+  border: 2px solid var(--accent-color);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.sign__input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 46px;
+  width: 100%;
+  border-radius: 6px;
+  background-color: var(--secondary-background-color);
+  font-size: 18px;
+  color: var(--primary-text-color);
+  border: 2px solid transparent;
+
+  padding-left: 3px;
+}
+
+.sign__btn:hover {
+  color: var(--primary-text-color);
+  background-color: var(--secondary-background-color);
+}
+.sign__text {
+  margin-top: 15px;
+  font-size: 20px;
+  color: var(--primary-text-color);
+}
+
+.sign__text a {
+  position: relative;
+  color: var(--accent-color);
+}
+.sign__text a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+.sign__delimiter {
+  font-size: 14px;
+  color: var(--primary-text-color);
+  line-height: 100%;
+}
+
+.sign__social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.sign__social a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  width: calc(33% - 10px);
+  border-radius: 6px;
+  color: var(--primary-text-color);
+}
+.sign__social a svg {
+  height: auto;
+  fill: var(--primary-text-color);
+  transition: 0.4s;
+}
+.sign__social a.fb {
+  background-color: #3b5999;
+}
+.sign__social a.fb svg {
+  width: 10px;
+}
+.sign__social a.gl {
+  background-color: #df4a32;
+}
+.sign__social a.gl svg {
+  width: 18px;
+}
+.sign__social a.tw {
+  background-color: #1da1f2;
+}
+.sign__social a.tw svg {
+  width: 18px;
+}
+.sign__social a:hover {
+  background-color: #fff;
+}
+.sign__social a:hover.fb svg {
+  fill: #3b5999;
+}
+.sign__social a:hover.gl svg {
+  fill: #df4a32;
+}
+.sign__social a:hover.tw svg {
+  fill: #1da1f2;
+}
+@media (min-width: 576px) {
+  .sign__form {
+    padding: 50px 60px;
+  }
+  .sign__logo {
+    margin-bottom: 50px;
+  }
+}
+
+/* end sign in-up page */
+
 /* Mobile Media queries */
 @media (max-width: 480px) {
+
+  .ld-mb-btn-sign-in a{
+    border: 2px solid var(--accent-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem 2rem;
+    
+  }
+
   .ld-gallery .ld-hero-videos {
     flex-wrap: wrap;
   }
@@ -565,27 +858,23 @@ li {
     border-top: 1px solid var(--border-color);
   }
 
-
   /* FAQ Page */
 
   .faq-container {
     background-color: var(--primary-background-color);
     padding: 2rem 1rem;
   }
-  
-
-
 
   /* FAQ header section */
 
-  .faq-main_class{
+  .faq-main_class {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
     justify-content: flex-start;
-    
-    width:100%;
+
+    width: 100%;
     padding: 2rem 1rem;
     background-image: url("/assets/imgs/Background-img\ qa.jpg");
     background-repeat: no-repeat;
@@ -593,13 +882,14 @@ li {
     object-fit: cover;
   }
 
-  .faq-home-link{
-    display:flex;
+  .faq-home-link {
+    display: flex;
     align-items: center;
     gap: 1rem;
   }
 
-  .faq_header, .faq-home-link{
+  .faq_header,
+  .faq-home-link {
     width: 100%;
   }
 
@@ -607,68 +897,101 @@ li {
 
   /* FAQ cards section */
 
-  .faq_section{
+  .faq_section {
     padding: 2rem 0;
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-    gap: 2rem;
-  }
-
-  .faq_cards, .box2_wrapper{
     display: flex;
-    align-items:center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .faq_cards,
+  .box2_wrapper {
+    display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 2rem;
   }
 
-  .faq-box_1, .box_2{
+  .faq-box_1,
+  .box_2 {
     width: 100%;
     background-color: var(--secondary-background-color);
     padding: 1rem;
     border-radius: 6px;
   }
 
-  .box1_heading{
+  .box1_heading {
     display: flex;
     gap: 1rem;
     align-items: center;
     margin-bottom: 1rem;
-
   }
 
-  .faq_img{
+  .faq_img {
     display: flex;
     align-items: center;
   }
 
-  .faq_img svg{
+  .faq_img svg {
     color: var(--accent-color);
   }
 
-  .qtn{
+  .qtn {
     font-weight: 400;
     font-size: 1.5rem;
-    color:  var(--primary-text-color);
+    color: var(--primary-text-color);
   }
 
-  .main_qtn1{
+  .main_qtn1 {
     color: var(--secondary-text-color);
   }
 
   /* End FAQ cards section */
 
+  /* FAQ page end */
 
 
-/* FAQ page end */
+
+/* PRIVACY PAGE */
+
+.pp-container{
+  width: 100%;
+  padding: 0 1rem;
+}
+
+
+.pp-page-text {
+  width: 100%;
+  padding-top: 30px;
+  
+}
+
+.pp-page-bold {
+  width: 100%;
+  padding-top: 50px;
+  color: var(--accent-color);
+  /* line-height: 2rem; */
+  font-size: 1.5rem;
+  /* padding-left: 20%; */
+  /* margin: 0 auto; */
+}
+
+.pp-page-title {
+  /* margin-right: 36%; */
+  /* padding-top: 50px; */
+  color: var(--accent-color);
+}
+/* END PRIVACY PAGE */
+
+
+
 }
 /* End mobile media queries */
 
 /* Desktop styling area */
 
 @media (min-width: 480px) {
-  
-
   /* hero section styling */
 
   .ld-container {
@@ -724,7 +1047,7 @@ li {
     gap: 2rem;
   }
 
-  .ld-ds-menu ul li a{
+  .ld-ds-menu ul li a {
     color: var(--primary-text-color);
   }
 
@@ -804,11 +1127,16 @@ li {
     border: 2px solid var(--accent-color);
     border-radius: 0.5rem;
     padding: 0.5rem 2rem;
-    color: var(--primary-text-color);
-    font-size: 1rem;
-    font-weight: 400;
+    
   }
 
+  
+
+.ld-ds-btn-sign-in a{
+  color: var(--primary-text-color);
+    font-size: 1rem;
+    font-weight: 400;
+}
   /* end button styling*/
 
   /* end Desktop menu section */
@@ -916,108 +1244,187 @@ li {
 
   /* end footer */
 
+  /* FAQ PAGE */
 
+  .faq-container {
+    background-color: var(--primary-background-color);
+    padding: 2rem 1rem;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
 
-/* FAQ PAGE */
+  /* FAQ header section */
 
-.faq-container {
-  background-color: var(--primary-background-color);
-  padding: 2rem 1rem;
-  max-width: 1140px;
+  .faq-header-background {
+    background-image: url("/assets/imgs/Background-img\ qa.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+  }
+
+  .faq-main_class {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+  }
+
+  .faq-home-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .faq_header,
+  .faq-home-link {
+    width: 100%;
+  }
+  /* end FAQ header section */
+
+  /* FAQ cards section */
+
+  .faq_section {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .faq_cards,
+  .box2_wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    width: 50%;
+  }
+
+  .faq-box_1,
+  .box_2 {
+    width: 100%;
+    background-color: var(--secondary-background-color);
+    padding: 1rem;
+    border-radius: 6px;
+  }
+
+  .box1_heading {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .faq_img {
+    display: flex;
+    align-items: center;
+  }
+
+  .faq_img svg {
+    color: var(--accent-color);
+  }
+
+  .qtn {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--primary-text-color);
+  }
+
+  .main_qtn1 {
+    color: var(--secondary-text-color);
+  }
+
+  /* End FAQ cards section */
+
+  /* END FAQ PAGE */
+
+/* PRIVACY POLICY PAGE */
+.pp-container {
+  width: 1140px;
   margin: 0 auto;
+  margin-bottom: 5rem;
+}
+/* END PRIVACY POLICY PAGE */
+
 }
 
-/* FAQ header section */
 
-.faq-header-background{
-  background-image: url("/assets/imgs/Background-img\ qa.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  object-fit: cover;
-}
+/* Privacy Policy page */
 
-.faq-main_class{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  max-width:1140px;
-  margin: 0 auto;
-  padding: 4rem 1rem;
-  
-}
-
-.faq-home-link{
-  display:flex;
-  align-items: center;
-  justify-content:flex-end;
-  gap: 1rem;
-}
-
-.faq_header, .faq-home-link{
-  width: 100%;
-}
-/* end FAQ header section */
+/* global styles */
 
 
- /* FAQ cards section */
-
- .faq_section{
+.pp-section {
   padding: 2rem 0;
-  display:flex;
-  flex-direction: row;
-  align-items:center;
-  margin: 0 auto;
-  justify-content: space-between;
-  gap: 2rem;
 }
 
-.faq_cards, .box2_wrapper{
-  display: flex;
-  align-items:center;
-  flex-direction: column;
-  gap: 2rem;
-  width: 50%;
-}
 
-.faq-box_1, .box_2{
+
+.pp-img {
   width: 100%;
-  background-color: var(--secondary-background-color);
-  padding: 1rem;
-  border-radius: 6px;
+  height: auto;
 }
 
-.box1_heading{
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin-bottom: 1rem;
-
+.pp-page-img {
+  width: 450px;
+}
+.pp-page-list {
+  padding-top: 20px;
+  /* padding-left: 20%; */
 }
 
-.faq_img{
-  display: flex;
-  align-items: center;
+
+.pp-page-text {
+  width: 100%;
+  padding-top: 30px;
+  /* padding-left: 20%; */
+  /* margin: 0 auto; */
 }
 
-.faq_img svg{
+.pp-page-bold {
+  width: 100%;
+  padding-top: 50px;
+  color: var(--accent-color);
+  /* line-height: 2rem; */
+  font-size: 1.5rem;
+  /* padding-left: 20%; */
+  /* margin: 0 auto; */
+}
+
+.pp-page-title {
+  margin-right: 36%;
+  padding-top: 50px;
   color: var(--accent-color);
 }
 
-.qtn{
-  font-weight: 400;
-  font-size: 1.5rem;
-  color:  var(--primary-text-color);
+.pp-page-text a{
+  color: var(--accent-color);
 }
 
-.main_qtn1{
-  color: var(--secondary-text-color);
+
+@media screen and (max-width: 442px) {
+  .pp-page-img {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .pp-page-img {
+    width: 300px;
+  }
+}
+.pp-page-text {
+  color: var(--primary-text-color);
 }
 
-/* End FAQ cards section */
-
-
-
-/* END FAQ PAGE */
-
+.pp-page-list {
+  color: var(--primary-text-color);
 }
+/*end of global styles*/
+
+/* end Privacy policy page */
