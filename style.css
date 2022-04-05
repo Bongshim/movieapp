@@ -1156,13 +1156,7 @@ input:focus {
   display: none;
 }
 
-.lang-en {
-  display: block;
-}
 
-.lang-pigin {
-  display: none;
-}
 
 .ld-lang-selector {
   position: absolute;
