@@ -15,12 +15,12 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
     integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>TIIDEFLIX</title>
+  <title>TIIDEFLIX - Catalog</title>
 </head>
 
 <body>
 
-  
+
 
   <header class="ld-header">
 
@@ -43,10 +43,10 @@
         <!-- nav menu -->
         <ul>
           <li class="nav-item"><a href="/">Home</a></li>
-          <li class="nav-item"><a href="/src/gallery.html">Genre</a></li>
+          <li class="nav-item"><a href="#">Genre</a></li>
 
           <li class="nav-item"><a href="#">Pricing</a></li>
-          <li class="nav-item"><a href="/src/FAQ.html" > FAQ</a></li>
+          <li class="nav-item"><a href="/src/FAQ.html"> FAQ</a></li>
         </ul>
 
         <div class="ld-ds-menu2">
@@ -66,7 +66,7 @@
 
           <!-- button -->
           <div class="ld-ds-btn-sign-in">
-           <a href="/src/signin.html"> SIGN IN</a>
+            <a href="/src/signin.html"> SIGN IN</a>
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@
         <a href="/index.html">Home</a>
       </li>
       <li>
-        <a href="/src/gallery.html">Genre</a>
+        <a href="/about.html">Genre</a>
       </li>
       <li>
         <a href="/services.html">About</a>
@@ -107,7 +107,7 @@
         <a href="/contact.html">Contact</a>
       </li>
       <li>
-        <a href="/src/FAQ.html" >FAQ</a>
+        <a href="/src/FAQ.html">FAQ</a>
       </li>
       <li class="ld-mb-btn-sign-in">
         <a href="/src/signin.html">Sign in</a>
@@ -125,70 +125,61 @@
   <!--end search drop down mobile-->
 
 
-  
 
 
-  <!-- Recent releases section -->
-  <section class="ld-movie-section">
+
+  <!-- Trending TV SHOWS section -->
+  <section class="ld-movie-section ">
     <div class="ld-section-header">
-      <h2 class="ld-section-title">Movies</h2>
-      <div class="ld-filter-section">
-        <p class="ld-filter-title"> NEW RELEASES</p>
-        <span class="material-icons ld-filter-btn">
-          sort
-        </span>
-      </div>
+      <h2 class="ld-section-title">Trending TV Shows</h2>
 
-      <div class="ld-section-tab">
-
-        <div class="ld-tab-items ld-active">Movies</div>
-        <div class="ld-tab-items">TV-Shows</div>
-        <div class="ld-tab-items">Animes</div>
-
-      </div>
     </div>
 
     <div class="ld-gallery ">
-      <div class="ld-hero-videos ld-single-data-contain">
-        <!-- video card item-->
-        <div class="ld-video-item">
-          <div class="ld-video-cover">
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BMjE3Njc4NzItMzMwMy00ZGRmLWExMTQtNjBmNWJmN2RkY2NjXkEyXkFqcGdeQXVyNjYwOTM0MTM@._V1_FMjpg_UX853_.jpg"
-              alt="Benched" />
-            <a href="" class="ld-video-play-btn"></a>
-            <span class="ld-video-rating">8.9</span>
-          </div>
-          <div class="ld-video-content">
-            <h3 class="ld-video-title">Benched</h3>
-            <span class="ld-video-category">Comedy</span>
-            <span class="ld-video-category">Comedy</span>
-            <span class="ld-video-category">Comedy</span>
-            <span class="ld-video-category">Comedy</span>
-          </div>
-        </div>
-        <!-- end video card -->
-
-
+      <div class="ld-hero-videos ld-video-data-contain-trending-tv">
 
       </div>
     </div>
 
   </section>
-  <!-- End recent releases section -->
+  <!-- End TV SHOWS section -->
 
 
+  <!-- Animation section -->
+  <section class="ld-movie-section ">
+    <div class="ld-section-header">
+      <h2 class="ld-section-title">Animation</h2>
 
-  <!-- Brief description and pricing intro -->
-  <section class="ld-bottom-section">
-    <div class="ld-bottom-section-container">
-      <h3 class="ld-section-title"><span class="ld-em-heading">TIIDEFLIX</span> - Best Movie Aggregator</h3>
-      <p class="ld-section-description">
-        TIIDEFLIX is a Movie streaming site with zero ads. Available in several languages, you can watch all your
-        favorite movies and keep track of upcoming movies.</p>
     </div>
+
+    <div class="ld-gallery ">
+      <div class="ld-hero-videos ld-video-data-contain-animation">
+
+      </div>
+    </div>
+
   </section>
-  <!-- End Brief description and pricing intro -->
+  <!-- End Animation section -->
+
+
+  <!-- Nigeria section -->
+  <section class="ld-movie-section ">
+    <div class="ld-section-header">
+      <h2 class="ld-section-title">Nigerian Movies</h2>
+
+    </div>
+
+    <div class="ld-gallery ">
+      <div class="ld-hero-videos ld-video-data-contain-nigeria">
+
+      </div>
+    </div>
+
+  </section>
+  <!-- End Nigeria section -->
+
+
+
 
 
   <footer class="ld-footer">
@@ -221,11 +212,8 @@
 
 
 
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
     integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
