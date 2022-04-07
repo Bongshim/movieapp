@@ -921,6 +921,36 @@ input:focus {
 /* END INFO SECTION */
 
 /* END CONTACT PAGE */
+.ld-ds-menu2-form
+{
+  display: flex;
+  align-items: center;
+
+}
+/* TOGGLE SEARCH PAGE */
+
+.ld-home{
+  display: block;
+}
+
+.ld-search-results{
+  display: none;
+}
+
+
+/* SEARCH */
+.ld-search-header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  max-width: 1140px;
+  margin: 0 auto;
+  font-size: 2rem;
+  color: var(--primary-text-color);
+}
+/* END SEARCH */
+
+/* END TOGGLE SEARCH PAGE */
 
 @media (min-width: 576px) {
   .sign__form {
@@ -1196,7 +1226,7 @@ input:focus {
     position: relative;
   }
 
-  .ld-search-dropbox {
+  .ld-search-dropbox  {
     border-radius: 0.5rem;
     border: none;
     padding: 0.5rem 4rem 0.5rem 0.5rem;

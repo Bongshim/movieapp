@@ -11,17 +11,23 @@ const UPCOMING_URL = BASE_URL + "/movie/upcoming?" + API_KEY;
 
 const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
-const SEARCH_SINGLEM_URL = BASE_URL + "/search/movie?" + API_KEY;
+const SEARCH_MOVIE = BASE_URL + "/search/movie?" + API_KEY + "&query=";
 
 const TRENDING_TV_SHOWS = BASE_URL + "/trending/tv/week?" + API_KEY;
 
-const ANIMATION = BASE_URL + "/discover/movie?" + API_KEY + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=16&with_watch_monetization_types=flatrate";
+const ANIMATION =
+  BASE_URL +
+  "/discover/movie?" +
+  API_KEY +
+  "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=16&with_watch_monetization_types=flatrate";
 
-const NIGERIAN_MOVIES = BASE_URL + "/search/movie?" + API_KEY + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&query=nigeria";
-
+const NIGERIAN_MOVIES =
+  BASE_URL +
+  "/search/movie?" +
+  API_KEY +
+  "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&query=nigeria";
 
 // console.log(TOP_RATED_MOVIES)
-
 
 // Getting popular movies
 getPopularMovies(POPULAR_MOVIES_URL);
@@ -33,7 +39,6 @@ getTrendingTVShows(TRENDING_TV_SHOWS);
 getAnimationMovies(ANIMATION);
 
 getNigerianMovies(NIGERIAN_MOVIES);
-
 
 //getting popular movies
 function getPopularMovies(url) {
@@ -65,7 +70,7 @@ function getTrendingTVShows(url) {
     });
 }
 
-// getting animation movies 
+// getting animation movies
 function getAnimationMovies(url) {
   fetch(url)
     .then((res) => res.json())
@@ -84,7 +89,14 @@ function getNigerianMovies(url) {
     });
 }
 
-
+function getSearchedMovie(url) {
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      // console.table(data.results);
+      showSearchedMovies(data.results);
+    });
+}
 
 // getting the genres of movies
 
@@ -97,8 +109,6 @@ function showPopularMovies(movies) {
     const movieRating = movie.vote_average;
     const movieGenreID = movie.genre_ids[0];
     const moviePoster = IMG_URL + movie.poster_path;
-
-
 
     // embeding data in html page
     const movieGallery = document.querySelector(".ld-video-data-contain");
@@ -159,7 +169,6 @@ function showUpcomingMovies(movies) {
   });
 }
 
-
 // show trending tv shows
 function showTrendingTVShows(movies) {
   movies.forEach((movie) => {
@@ -195,12 +204,9 @@ function showTrendingTVShows(movies) {
   });
 }
 
-function showAnimationMovies(movies){
-
+function showAnimationMovies(movies) {
   for (let i = 0; i < 10; i++) {
-
-
-  // movies.forEach((movie) => {
+    // movies.forEach((movie) => {
     // getting the movies
     const movieTitle = movies[i].title;
     const movieRating = movies[i].vote_average;
@@ -230,14 +236,12 @@ function showAnimationMovies(movies){
       `;
 
     movieGallery.appendChild(movieBox);
-  // });
-}
+    // });
+  }
 }
 
-function showNigerianMovies(movies){
-
+function showNigerianMovies(movies) {
   // for (let i = 0; i < 10; i++) {
-
 
   movies.forEach((movie) => {
     // getting the movies
@@ -254,9 +258,8 @@ function showNigerianMovies(movies){
     const movieBox = document.createElement("div");
     movieBox.classList.add("ld-video-item");
 
-    if ( movie.poster_path != null) {
-
-    movieBox.innerHTML = `
+    if (movie.poster_path != null) {
+      movieBox.innerHTML = `
       <div class="ld-video-cover">
           <img
           src="${moviePoster}"
@@ -270,17 +273,99 @@ function showNigerianMovies(movies){
       </div>
       `;
 
-    movieGallery.appendChild(movieBox);}
+      movieGallery.appendChild(movieBox);
+    }
   });
-// }
+  // }
 }
 
+function showSearchedMovies(movies) {
+  // for (let i = 0; i < 10; i++) {
 
+  movies.forEach((movie) => {
+    // getting the movies
+    const movieTitle = movie.title;
+    const movieRating = movie.vote_average;
+    const movieGenreID = movie.genre_ids[0];
+    const moviePoster = IMG_URL + movie.poster_path;
 
-// function movieSelected(title){
-//   sessionStorage.setItem('movieTitle',title);
-//   window.location = '/src/movie.html';
-//   return false;
-// }
+    // console.log(movieTitle)
+    // embeding data in html page
+    const movieGallery = document.querySelector(
+      ".ld-video-search-data-contain"
+    );
 
+    const movieBox = document.createElement("div");
+    movieBox.classList.add("ld-video-item");
 
+    if (movie.poster_path != null) {
+      movieBox.innerHTML = `
+      <div class="ld-video-cover">
+          <img
+          src="${moviePoster}"
+          alt="${movieTitle}" />
+          <a href="" class="ld-video-play-btn"></a>
+          <span class="ld-video-rating">${movieRating}</span>
+      </div>
+      <div class="ld-video-content">
+          <h3 class="ld-video-title">${movieTitle}</h3>
+          <span class="ld-video-category"></span>
+      </div>
+      `;
+
+      movieGallery.appendChild(movieBox);
+    }
+  });
+  // }
+}
+
+const form = document.querySelector(".ld-ds-menu2-form");
+const searchHeading = document.querySelector(".ld-search-header");
+
+form.addEventListener("submit", function (event) {
+  const home = document.querySelector(".ld-home");
+  const searchResults = document.querySelector(".ld-search-results");
+
+  // hide home page
+  home.style.display = "none";
+  event.preventDefault();
+
+  // get search value
+  const searchInput = document.querySelector(".ld-search-dropbox").value;
+  searchResults.style.display = "block";
+
+  searchHeading.innerHTML = `Search Results for ${searchInput}`;
+
+  // replace space with &
+  const searchInputReplaced = searchInput.replace(/\s/g, "&");
+  
+  // Send link to API
+  getSearchedMovie(SEARCH_MOVIE + searchInputReplaced);
+});
+
+const mbForm = document.querySelector(".ld-mobile-search");
+
+mbForm.addEventListener("submit", function (event) {
+  const home = document.querySelector(".ld-home");
+  const searchResults = document.querySelector(".ld-search-results");
+
+  // hide home page
+  home.style.display = "none";
+  event.preventDefault();
+
+  // get search value
+  const searchInput = document.querySelector(".ld-search-box").value;
+  searchResults.style.display = "block";
+
+  // Take out the drop down
+  search_dropdown.style.top = "-100px";
+  search_dropdown.style.transition = "all 0.5s ease-in-out";
+
+  searchHeading.innerHTML = `Search Results for ${searchInput}`;
+
+  // replace space with &
+  const searchInputReplaced = searchInput.replace(/\s/g, "&");
+ 
+  // send link to API
+  getSearchedMovie(SEARCH_MOVIE + searchInputReplaced);
+});

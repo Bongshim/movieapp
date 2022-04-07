@@ -28,8 +28,6 @@ language_btn.addEventListener("click", () => {
 });
 
 
-
-
 // close search box
 close_search.addEventListener("click", () => {
   search_dropdown.style.top = "-100px";
