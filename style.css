@@ -108,8 +108,6 @@ li {
 
 /* end Body style */
 
-
-
 .ld-search-btn,
 .ld-prev-btn,
 .ld-next-btn,
@@ -315,8 +313,7 @@ li {
 
 /* end slide out menu */
 
-.ld-lang-state{
-  
+.ld-lang-state {
 }
 
 /* Header BG */
@@ -501,12 +498,14 @@ li {
   padding: 1rem 1rem;
 }
 
-/* .ld-gallery {
-} */
-
 /* End Section title */
 
 /* Footer section */
+.ld-footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
 
 .ld-footer-links {
   display: flex;
@@ -822,6 +821,107 @@ input:focus {
 .sign__social a:hover.tw svg {
   fill: #1da1f2;
 }
+
+/* CONTACT PAGE */
+.con-main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+
+.con-form-section {
+  width: 60%;
+}
+
+.con-heading {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--primary-text-color);
+  margin-bottom: 1rem;
+}
+
+/* FORM SECTION */
+
+.con-form {
+  width: 100%;
+  padding: 2rem;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.con-name-email {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  
+}
+.con-name,
+.con-email {
+  width: 100%;
+}
+
+.con-input{
+  width: 100%;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  color: var(--primary-text-color);
+  margin-bottom: 1rem;
+  background-color: var(--secondary-background-color);
+  
+  
+}
+
+.con-input:focus{
+  outline: 1px solid var(--accent-color);
+}
+
+.con-text-area{
+  height: 150px;
+  resize: none;
+}
+
+.con-submit-btn{
+  all:unset;
+  font-size:1rem;
+  color: var(--primary-text-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 6px;
+  padding: .5em 2em;
+  cursor: pointer;
+}
+
+.con-submit-btn:hover{
+  background-color: rgba(249,171,0,0.05);
+}
+
+/* END FORM SECTION */
+
+/* INFO SECTION */
+.con-info .con-heading{
+  padding-left: 1rem;
+}
+
+.con-info-text{
+  padding: 1rem;
+}
+
+.con-info-text > p{
+  font-size: 1rem;
+  color: var(--primary-text-color);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+
+}
+
+/* END INFO SECTION */
+
+/* END CONTACT PAGE */
+
 @media (min-width: 576px) {
   .sign__form {
     padding: 50px 60px;
@@ -835,9 +935,8 @@ input:focus {
 
 /* Mobile Media queries */
 @media (max-width: 480px) {
-
-  .ld-lang-container{
-    display:none;
+  .ld-lang-container {
+    display: none;
   }
 
   .ld-mb-btn-sign-in a {
@@ -988,6 +1087,33 @@ input:focus {
     color: var(--accent-color);
   }
   /* END PRIVACY PAGE */
+
+    /* CONTACT PAGE */
+
+    .con-main{
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+    .con-form-section{
+      width: 100%;
+    }
+
+    .con-form{
+      padding:1rem;
+    }
+    .con-name-email{
+      flex-direction: column;
+    }
+
+    .con-name .con-input{
+      margin-bottom: 0px;
+    }
+    .con-info{
+      margin-top: 1rem;
+    }
+
+    /* END CONTACT PAGE */
+
 }
 /* End mobile media queries */
 
@@ -1100,12 +1226,12 @@ input:focus {
     align-items: center;
     background-color: var(--secondary-background-color);
     position: absolute;
-    right: 30px;
-    height: 90%;
+    right: 5px;
+    /* height: 90%; */
     cursor: pointer;
   }
 
-  .ld-ds-lang{
+  .ld-ds-lang {
     cursor: pointer;
   }
   .ld-ds-lang-icon,
@@ -1149,39 +1275,36 @@ input:focus {
 
   /* LANGUAGE */
 
-.ld-lang-container {
-  position: relative;
-  max-width: 1140px;
-  margin: 0 auto;
-  display: none;
-}
+  .ld-lang-container {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: none;
+  }
 
+  .ld-lang-selector {
+    position: absolute;
+    z-index: 3000;
+    border-radius: 6px;
+    background-color: var(--primary-background-color);
+    right: 150px;
+  }
 
+  .ld-lang-selector .lang-item {
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--primary-text-color);
+    font-weight: 400;
+    font-size: 1rem;
+    cursor: pointer;
+  }
 
-.ld-lang-selector {
-  position: absolute;
-  z-index: 3000;
-  border-radius: 6px;
-  background-color: var(--primary-background-color);
-  right: 150px;
-}
-
-.ld-lang-selector .lang-item {
-  padding: 0.5rem 2rem;
-  border-bottom: 1px solid var(--border-color);color: var(--primary-text-color);
-  font-weight: 400;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-
-
-.ld-lang-selector .lang-item:hover{
-  color: var(--accent-color);
+  .ld-lang-selector .lang-item:hover {
+    color: var(--accent-color);
     transition: all 0.4s ease-in-out;
-}
+  }
 
-/* END LANGUAGE */
+  /* END LANGUAGE */
 
   /* end Desktop menu section */
 
@@ -1395,6 +1518,9 @@ input:focus {
     margin-bottom: 5rem;
   }
   /* END PRIVACY POLICY PAGE */
+
+
+  
 }
 
 /* Privacy Policy page */
