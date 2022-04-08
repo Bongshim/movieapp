@@ -1135,6 +1135,9 @@ svg.bi.bi-globe2 {
   color: var(--accent-color);
 }
 
+.sign-in-a{
+  color: var(--primary-text-color);
+}
 
 /* END ABOUT PAGE */
 
