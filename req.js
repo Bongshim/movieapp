@@ -205,14 +205,15 @@ function showTrendingTVShows(movies) {
 }
 
 function showAnimationMovies(movies) {
-  for (let i = 0; i < 10; i++) {
-    // movies.forEach((movie) => {
+  
+    movies.forEach((movie) => {
     // getting the movies
-    const movieTitle = movies[i].title;
-    const movieRating = movies[i].vote_average;
-    const movieGenreID = movies[i].genre_ids[0];
-    const moviePoster = IMG_URL + movies[i].poster_path;
-
+    const movieTitle = movie.title;
+    const movieRating = movies.vote_average;
+    // const movieGenreID = movies.genre_ids[0];
+    const moviePoster = IMG_URL + movie.poster_path;
+    
+    // console.log(movie);
     // embeding data in html page
     const movieGallery = document.querySelector(
       ".ld-video-data-contain-animation"
@@ -236,8 +237,8 @@ function showAnimationMovies(movies) {
       `;
 
     movieGallery.appendChild(movieBox);
-    // });
-  }
+    });
+  
 }
 
 function showNigerianMovies(movies) {
