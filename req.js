@@ -120,7 +120,7 @@ function showPopularMovies(movies) {
     <a onclick="movieSelected('${movie.original_title}')"><div class="ld-video-cover">
         <img
         src="${moviePoster}"
-        alt="Benched" />
+        alt="${movie.original_title}}" />
         <a href="" class="ld-video-play-btn"></a>
         <span class="ld-video-rating">${movieRating}</span>
     </div>
@@ -152,7 +152,7 @@ function showUpcomingMovies(movies) {
     movieBox.classList.add("ld-video-item");
 
     movieBox.innerHTML = `
-      <div class="ld-video-cover">
+    <a onclick="movieSelected('${movie.original_title}')"><div class="ld-video-cover">
           <img
           src="${moviePoster}"
           alt="Benched" />
@@ -162,7 +162,7 @@ function showUpcomingMovies(movies) {
       <div class="ld-video-content">
           <h3 class="ld-video-title">${movieTitle}</h3>
           <span class="ld-video-category"></span>
-      </div>
+      </div></a>
       `;
 
     movieGallery.appendChild(movieBox);
@@ -187,7 +187,7 @@ function showTrendingTVShows(movies) {
     movieBox.classList.add("ld-video-item");
 
     movieBox.innerHTML = `
-      <div class="ld-video-cover">
+    <a onclick="movieSelected('${movie.original_title}')"><div class="ld-video-cover">
           <img
           src="${moviePoster}"
           alt="${movieTitle}" />
@@ -197,7 +197,7 @@ function showTrendingTVShows(movies) {
       <div class="ld-video-content">
           <h3 class="ld-video-title">${movieTitle}</h3>
           <span class="ld-video-category"></span>
-      </div>
+      </div></a>
       `;
 
     movieGallery.appendChild(movieBox);
@@ -222,7 +222,7 @@ function showAnimationMovies(movies) {
     movieBox.classList.add("ld-video-item");
 
     movieBox.innerHTML = `
-      <div class="ld-video-cover">
+    <a onclick="movieSelected('${movie.original_title}')"> <div class="ld-video-cover">
           <img
           src="${moviePoster}"
           alt="${movieTitle}" />
@@ -232,7 +232,7 @@ function showAnimationMovies(movies) {
       <div class="ld-video-content">
           <h3 class="ld-video-title">${movieTitle}</h3>
           <span class="ld-video-category"></span>
-      </div>
+      </div></a>
       `;
 
     movieGallery.appendChild(movieBox);
@@ -260,7 +260,7 @@ function showNigerianMovies(movies) {
 
     if (movie.poster_path != null) {
       movieBox.innerHTML = `
-      <div class="ld-video-cover">
+      <a onclick="movieSelected('${movie.original_title}')"><div class="ld-video-cover">
           <img
           src="${moviePoster}"
           alt="${movieTitle}" />
@@ -270,7 +270,7 @@ function showNigerianMovies(movies) {
       <div class="ld-video-content">
           <h3 class="ld-video-title">${movieTitle}</h3>
           <span class="ld-video-category"></span>
-      </div>
+      </div></a>
       `;
 
       movieGallery.appendChild(movieBox);
@@ -300,7 +300,7 @@ function showSearchedMovies(movies) {
 
     if (movie.poster_path != null) {
       movieBox.innerHTML = `
-      <div class="ld-video-cover">
+      <a onclick="movieSelected('${movie.original_title}')"><div class="ld-video-cover">
           <img
           src="${moviePoster}"
           alt="${movieTitle}" />
@@ -310,7 +310,7 @@ function showSearchedMovies(movies) {
       <div class="ld-video-content">
           <h3 class="ld-video-title">${movieTitle}</h3>
           <span class="ld-video-category"></span>
-      </div>
+      </div></a>
       `;
 
       movieGallery.appendChild(movieBox);
@@ -369,3 +369,12 @@ mbForm.addEventListener("submit", function (event) {
   // send link to API
   getSearchedMovie(SEARCH_MOVIE + searchInputReplaced);
 });
+
+
+
+// Selecting a movie
+
+function movieSelected(name){
+  window.location = '/src/movie.html'
+  return false;
+}

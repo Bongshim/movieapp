@@ -952,6 +952,192 @@ input:focus {
 
 /* END TOGGLE SEARCH PAGE */
 
+
+
+
+/* MOVIE PAGE */
+
+.movie-container{
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.mov-breadcrumbs{
+  color: var(--primary-text-color);
+  margin: 1rem 0rem;
+}
+
+.mov-video{
+  width: 1000px;
+  
+}
+
+.mov-video-view{
+  width: 100%;
+}
+
+.mov-info{
+  display:flex;
+  margin-top: 2rem;
+
+}
+
+.mov-info-title{
+  font-size: 2rem;
+  color: var(--primary-text-color);
+}
+
+.mov-info-description{
+  color: var(--primary-text-color);
+  padding-bottom: 1rem;
+}
+
+.mov-detail-box{
+  display:flex;
+}
+
+.mov-info-s{
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.mov-details .mov-detail{
+  color: var(--primary-text-color);
+  font-size: 1rem;
+}
+
+.mov-recommended-title{
+  color: var(--primary-text-color);
+  font-size: 2rem;
+  font-weight: 400;
+  padding-top: 2rem;
+}
+
+/* END MOVIE PAGE */
+
+
+
+/* ABOUT PAGE */
+.abt-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1140px;
+  font-size: 1rem;
+  color: var(--primary-text-color);
+  padding: 4rem 1rem 8rem;
+
+
+}
+
+.best-place {
+  
+  
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 130%;
+  margin-bottom: 20px;
+}
+
+.abt_boxes {
+  display: flex;
+  color: var(--primary-text-color);
+}
+
+.abt_box1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  width: 400px;
+  height: 200px;
+}
+.img-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+svg.bi.bi-display {
+  color: var(--accent-color);
+  /* padding-left: 15px; */
+}
+.about-paragraph {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 25px;
+}
+svg.bi.bi-film {
+  color: var(--accent-color);
+  /* padding-left: 15px; */
+}
+svg.bi.bi-trophy-fill {
+  color: var(--accent-color);
+  /* padding-left: 15px;   */
+}
+
+svg.bi.bi-bell-fill {
+  color: var(--accent-color);
+  /* padding-left: 15px; */
+}
+
+svg.bi.bi-globe2 {
+  color: var(--accent-color);
+}
+
+/* HOW IT WORKS SECTION */
+
+.abhow-it-works-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center;  */
+  width: 100%;
+  font-size: 16px;
+  line-height: 26px;
+  background-color: var(--primary-background-color);
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  /* border: 0px solid var(--border-color); */
+  padding-right: 200px;
+  padding-left: 200px;
+  padding-top: 100px;
+  gap: 50px;
+}
+
+.abt-howitworks-boxes {
+  display: flex;
+  color: var(--primary-text-color);
+  background-color: var(--primary-background-color);
+}
+
+.abt-herder-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+
+.abt_how_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  width: 400px;
+  height: 200px;
+}
+
+.abt-number {
+  color: var(--accent-color);
+}
+
+
+/* END ABOUT PAGE */
+
 @media (min-width: 576px) {
   .sign__form {
     padding: 50px 60px;
@@ -1144,7 +1330,45 @@ input:focus {
 
     /* END CONTACT PAGE */
 
-}
+
+    /* MOVIE PAGE */
+
+    .mov-info{
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .mov-video{
+      width: 100%;
+
+    }
+
+
+    .mov-recommended-title, .mov-breadcrumbs{
+      padding-inline:1rem;
+    }
+
+    /* END MOVIE PAGE */
+
+    /* ABOUT PAGE */
+
+    .best-place{
+      padding: 1rem;
+      font: 1.5rem;
+      margin-bottom: 0;
+    }
+    .abt_boxes{
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+
+    .abt-details-1{
+      padding:1rem;
+    }
+    /* END ABOUT PAGE */
+
+  }
 /* End mobile media queries */
 
 /* Desktop styling area */
@@ -1175,6 +1399,7 @@ input:focus {
   /* Video item  */
   .ld-video-item {
     width: 198px;
+    cursor: pointer;
   }
 
   .ld-hero-videos {
@@ -1293,7 +1518,7 @@ input:focus {
     all: unset;
     border: 2px solid var(--accent-color);
     border-radius: 0.5rem;
-    padding: 0.5rem 2rem;
+    padding: 0.5em 1em;
   }
 
   .ld-ds-btn-sign-in a {
